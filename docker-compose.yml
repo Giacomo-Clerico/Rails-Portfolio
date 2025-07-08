@@ -1,0 +1,7 @@
+# docker-compose.yml
+services:
+  web:
+    image: ruby:3.2.2
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
