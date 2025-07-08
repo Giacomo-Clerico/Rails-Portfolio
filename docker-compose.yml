@@ -1,7 +1,26 @@
-# docker-compose.yml
+# The final, correct docker-compose.yml
 services:
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: my_portfolio_development
+
   web:
-    image: ruby:3.2.2
-    working_dir: /usr/src/app
+    build: .  # <--- THIS IS THE MAGIC. It tells Docker to use our Dockerfile.
+    command: bash -c "rm -f tmp/pids/server.pid && ./bin/dev"
     volumes:
       - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:password@db/my_portfolio_development
+      RAILS_ENV: development
+
+volumes:
+  postgres_data:
