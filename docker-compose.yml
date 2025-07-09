@@ -18,6 +18,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+    tty: true
     environment:
       DATABASE_URL: postgresql://postgres:password@db/my_portfolio_development
       RAILS_ENV: development
