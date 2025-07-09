@@ -1,0 +1,30 @@
+<div class="flex min-h-screen items-center justify-center bg-gray-100">
+    <div class="text-center space-y-4">
+        <h1 class="text-2xl font-semibold text-gray-800">
+            <%= t('layouts.application.choose_language', default: 'Choose your language') %>
+        </h1>
+        <div class="flex justify-center gap-6">
+            <%= link_to set_language_path(locale: :en), class: "group" do %>
+            <div class="flex flex-col items-center transition-transform duration-200 group-hover:scale-105">
+                <div style="border-radius: 1rem" class="overflow-hidden rounded-md shadow-sm w-24 h-16">
+                    <img src="https://flagcdn.com/h240/gb.png"  alt="English" title="English" class="rounded-md w-full h-full object-cover block" />
+                </div>
+                <span class="mt-1 text-sm text-gray-600 group-hover:text-gray-800">
+                    <%= t('layouts.application.english_language', default: 'English') %>
+                </span>
+            </div>
+            <% end %>
+
+            <%= link_to set_language_path(locale: :it), class: "group" do %>
+            <div class="flex flex-col items-center transition-transform duration-200 group-hover:scale-105">
+                <div style="border-radius: 1rem" class="overflow-hidden rounded-md shadow-sm w-24 h-16">
+                <img src="https://flagcdn.com/h240/it.png" alt="Italian" title="Italian" class="rounded-md w-full h-full object-cover"/>
+                </div>
+                <span class="mt-2 text-sm text-gray-600 group-hover:text-gray-800">
+                    <%= t('layouts.application.italian_language', default: 'Italiano') %>
+                </span>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>

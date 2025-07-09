@@ -28,4 +28,9 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  title: "Welcome!"
+  subtitle: "Select your language using the flags above."
+  layouts:
+    application:
+      english_language: "English"
+      italian_language: "Italian"

@@ -1,0 +1,7 @@
+it:
+  title: "Benvenuto!"
+  subtitle: "Seleziona la tua lingua usando le bandiere in alto."
+  layouts:
+    application:
+      english_language: "Inglese"
+      italian_language: "Italiano"
