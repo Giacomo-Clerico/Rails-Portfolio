@@ -28,7 +28,7 @@
 #       enabled: "ON"
 
 en:
-  title: "Welcome!"
+  title: "My portfolio"
   layouts:
     application:
       english_language: "English"

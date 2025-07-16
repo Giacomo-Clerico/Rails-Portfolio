@@ -1,5 +1,6 @@
 class LanguagesController < ApplicationController
     skip_before_action :set_locale, only: [:set]
+
     def set
         locale = params[:locale].to_sym
 
@@ -16,5 +17,7 @@ class LanguagesController < ApplicationController
     end
 
     def show
+        @skip_layout_body = true
+        cookies.delete(:locale)
     end
 end
