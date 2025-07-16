@@ -20,7 +20,7 @@ module App
     config.i18n.default_locale = :en
 
     # Define the list of available languages
-    config.i18n.available_locales = [:en, :it]
+    config.i18n.available_locales = [ :en, :it ]
 
     # Configuration for the application, engines, and railties goes here.
     #

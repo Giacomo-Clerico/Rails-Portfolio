@@ -1,5 +1,5 @@
 class LanguagesController < ApplicationController
-    skip_before_action :set_locale, only: [:set]
+    skip_before_action :set_locale, only: [ :set ]
 
     def set
         locale = params[:locale].to_sym
@@ -11,7 +11,7 @@ class LanguagesController < ApplicationController
             # 'signed' encrypts it so the user can't tamper with it.
             cookies.permanent.signed[:locale] = locale
         end
-    
+
     # Redirect the user back to the page they were on
     redirect_to root_path
     end
